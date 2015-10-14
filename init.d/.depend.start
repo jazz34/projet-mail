@@ -1,0 +1,12 @@
+TARGETS = killprocs motd rpcbind nfs-common rsyslog virtualbox-guest-utils bind9 atd ssh acpid exim4 cron rsync bootlogs single rmnologin rc.local
+INTERACTIVE =
+bind9: rsyslog
+atd: rsyslog
+ssh: rsyslog
+acpid: rsyslog
+exim4: rsyslog bind9
+cron: rsyslog bind9
+rsync: rsyslog bind9
+single: killprocs bootlogs motd
+rmnologin: bind9 rsyslog virtualbox-guest-utils rpcbind exim4 nfs-common atd bootlogs motd ssh cron acpid rsync
+rc.local: bind9 rsyslog virtualbox-guest-utils rpcbind exim4 nfs-common atd bootlogs motd ssh cron acpid rsync

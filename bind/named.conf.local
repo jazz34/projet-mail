@@ -1,0 +1,20 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+
+zone "jason-moreau.local"{
+	type master;
+	file "/etc/bind/db.jason-moreau.local";
+};
+
+//Reverse zone de jason-moreau.lcoal
+
+zone "13.204.10.in-addr.arpa"{
+	type master;
+	file "/etc/bind/db.10.204.13";
+};

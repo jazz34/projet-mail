@@ -1,0 +1,17 @@
+;--------------------------db.10.204.13------------------------------
+$TTL 1h;
+@ IN SOA wheezy-auto.jason-moreau.local. jason.moreau-vessiere.iutbeziers.fr. (
+	2015091301 ;
+	3600 ;
+	3600 ;
+	3600000 ; 
+	86400 ) ;
+
+@	IN NS wheezy-auto.jason-moreau.local.
+
+smtp	CNAME 	wheezy-auto.jason-moreau.local.
+pop 	CNAME	wheezy-auto.jason-moreau.local.
+imap	CNAME	wheezy-auto.jason-moreau.local.
+
+$ORIGIN 13.204.10.in-addr.arpa.
+30 IN PTR wheezy-auto.jason-moreau.local.

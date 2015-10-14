@@ -1,0 +1,13 @@
+TARGETS = urandom virtualbox-guest-utils atd exim4 bind9 sendsigs rsyslog umountnfs.sh rpcbind nfs-common hwclock.sh networking umountfs umountroot halt reboot
+bind9: exim4
+sendsigs: bind9 virtualbox-guest-utils exim4 atd
+rsyslog: bind9 sendsigs exim4 atd
+umountnfs.sh: bind9 virtualbox-guest-utils rsyslog sendsigs exim4 atd
+rpcbind: umountnfs.sh
+nfs-common: umountnfs.sh
+hwclock.sh: rsyslog nfs-common atd
+networking: bind9 rpcbind exim4 umountnfs.sh
+umountfs: bind9 hwclock.sh virtualbox-guest-utils rpcbind urandom exim4 networking umountnfs.sh atd
+umountroot: umountfs
+halt: umountroot
+reboot: umountroot

@@ -1,0 +1,15 @@
+;-----------------------jason-moreau.local.master-------------------;
+$TTL 1H;
+@ IN SOA wheezy-autp.jason-moreau.local. jason.moreau-vessiere.iutbeziers.fr. (
+	2015091301 ;
+	3600 ;
+	3600 ;
+	3600000 ; 
+	86400 ) ; 
+
+$ORIGIN jason-moreau.local.
+@	IN	NS wheezy-auto
+@	IN	MX 0	mail
+
+wheezy-auto IN A 10.204.13.30
+mail IN A 194.199.227.25
